@@ -40,7 +40,7 @@ An AWS account with sufficient permissions
 📥 Usage
 Clone this repository:
 
-git clone https://github.com/varun0170/terraform-aws-infra.git
+git clone https://github.com/varun0170/Terraform-AWS-Infrastructure-with-Modules.git
 cd terraform-aws-infra
 Initialize Terraform:
 
