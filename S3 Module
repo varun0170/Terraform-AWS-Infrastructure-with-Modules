@@ -1,0 +1,28 @@
+# modules/s3_bucket/main.tf
+---
+
+resource "aws_s3_bucket" "this" {
+  bucket = var.bucket_name
+
+  versioning {
+    enabled = var.versioning
+  }
+
+  tags = {
+    Name = var.bucket_name
+  }
+}
+---
+# modules/s3_bucket/variables.tf
+
+---
+variable "bucket_name" {}
+variable "versioning" {
+  default = false
+}
+---
+# modules/s3_bucket/outputs.tf
+---
+output "bucket_name" {
+  value = aws_s3_bucket.this.bucket
+---
