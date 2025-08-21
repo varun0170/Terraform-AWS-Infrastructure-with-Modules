@@ -1,0 +1,24 @@
+# modules/ec2_instance/main.tf
+---
+resource "aws_instance" "this" {
+  ami           = var.ami_id
+  instance_type = var.instance_type
+
+  tags = {
+    Name = var.instance_name
+  }
+}
+---
+# modules/ec2_instance/variables.tf
+---
+variable "ami_id" {}
+variable "instance_type" {}
+variable "instance_name" {}
+variable "vpc_id" {}
+---
+# modules/ec2_instance/outputs.tf
+---
+output "instance_id" {
+  value = aws_instance.this.id
+}
+---
